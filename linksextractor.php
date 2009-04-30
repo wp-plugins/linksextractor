@@ -4,7 +4,7 @@ Plugin Name: Linksextractor
 Plugin URI: http://plugins.wirtschaftsinformatiker.cc/wp-linkextractor
 Description: Place all your Links at the bottom of your post, automatically
 Author: Marco Bischoff
-Version: 0.3
+Version: 0.4
 Author URI: http://wirtschaftsinformatiker.cc
 */ 
 

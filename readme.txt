@@ -1,8 +1,8 @@
 === Linkextractor ===
 Tags: links, extractor, list, print version
 Requires at least: 2.0.0
-Tested up to: 2.2
-Stable tag: 0.3
+Tested up to: 2.7
+Stable tag: 0.4
 
 This plugin extract the links in your post and lists them under your post. Your links in the post will not be removed.
 
