@@ -99,6 +99,7 @@ function linksextractor_set_prop($post_id,$post) {
 
 function linksextractor_special_admin_init() {
       add_meta_box('linkextractor_box','Linkextractor', 'linksextractor_get_prop','post','side', 'default');
+	  add_meta_box('linkextractor_box','Linkextractor', 'linksextractor_get_prop','page','side', 'default');
 
      add_action('save_post','linksextractor_set_prop');
 	 add_action('edit_post','linksextractor_set_prop');
