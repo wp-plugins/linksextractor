@@ -4,7 +4,7 @@ Plugin Name: Linksextractor
 Plugin URI: http://plugins.wirtschaftsinformatiker.cc/wp-linkextractor
 Description: Place all your Links at the bottom of your post, automatically
 Author: Marco Bischoff
-Version: 0.4
+Version: 0.5
 Author URI: http://wirtschaftsinformatiker.cc
 */ 
 
@@ -57,5 +57,43 @@ if(function_exists('load_plugin_textdomain'))
 		}
 	}
 
+	function linksextractor_get_prop() {
+		$iStatus = get_post_meta($_GET["post"], '_linkextracter_is_set', true);
+		$out = '<label for="linkextractor">';
+		$out .= '<select id="linkextractor" name="linkextractor"> ';
+		if($iStatus == 0) {
+			$out .= '<option selected="selected" value="0">'.__("Links extrahieren", "linksextractor").'</option>  ';
+		} else {
+			$out .= '<option selected="selected" value="0">'.__("Links extrahieren", "linksextractor").'</option>  ';
+		}
+
+		if($Status == 1) {
+			$out .= '<option selected="selected" value="1">'.__("Links nicht extrahieren", "linksextractor").'</option>  ';
+		} else {
+			$out .= '<option value="1">'.__("Links nicht extrahieren", "linksextractor").'</option>  ';
+		}
+
+		$out .= '</select>  ';
+		$out .= '</label>';
+		echo $out;
+				
+	}
+	
+function linksextractor_set_prop($post_id,$post) {
+	
+	if(isset($_POST['linkextractor'])) {
+	
+		update_post_meta($post_id,'_linkextracter_is_set',$_POST['linkextractor']);
+	}
+}
+
+function linksextractor_special_admin_init() {
+      add_meta_box('linkextractor_box','Linkextractor', 'linksextractor_get_prop','post','side', 'default');
+
+     add_action('save_post','linksextractor_set_prop');
+	 add_action('edit_post','linksextractor_set_prop');
+	}
+	
+	add_action('admin_menu','linksextracter_special_admin_init');
 	add_action('the_content', 'linksextracter_set_urls');
 ?>

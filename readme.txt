@@ -1,8 +1,8 @@
 === Linkextractor ===
 Tags: links, extractor, list, print version
 Requires at least: 2.0.0
-Tested up to: 2.7
-Stable tag: 0.4
+Tested up to: 2.7.1
+Stable tag: 0.5
 
 This plugin extract the links in your post and lists them under your post. Your links in the post will not be removed.
 
@@ -21,3 +21,7 @@ This section describes how to install the plugin and get it working.
 1. Upload `linkextractor.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Enjoy!
+
+== Update ==
+
+It's possible now, to select for each page / post to set if the links should be extracted or not.
